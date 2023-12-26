@@ -14,7 +14,7 @@ jobs:
      - name: Checkout
        uses: actions/checkout@v2
 
-     - name: Push Helm Chart to ChartMuseum
+     - name: Save Helm Chart to ChartMuseum
        run: |
         sudo cd appChart/
         sudo helm package .
