@@ -17,5 +17,5 @@ jobs:
      - name: Save Helm Chart to ChartMuseum
        run: |
         sudo helm package appChart/
-        sudo curl --data-binary "@./appChart/appChart-0.1.0.tgz" http://localhost:8080/api/charts
+        sudo curl --data-binary "@app-0.1.0.tgz" http://localhost:8080/api/charts
 
