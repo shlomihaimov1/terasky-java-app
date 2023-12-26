@@ -16,6 +16,7 @@ jobs:
 
      - name: Push Helm Chart to ChartMuseum
        run: |
+        sudo cd appChart/
         sudo helm package .
         sudo curl --data-binary "@appChart-0.1.0.tgz" http://localhost:8080/api/charts
 
