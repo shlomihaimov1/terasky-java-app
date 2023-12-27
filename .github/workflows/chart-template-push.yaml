@@ -15,15 +15,18 @@ jobs:
        uses: actions/checkout@v2
 
      - name: Save Helm Chart to ChartMuseum
-      #  run: |
-      #   sudo helm package appChart/
-      #   sudo curl --data-binary "@app-0.1.0.tgz" http://localhost:8080/api/charts?force=true
-       uses: unwrittenmedia/helm3-push-action@v1.0.2
-       env:
-         SOURCE_DIR: '.'
-         CHART_FOLDER: 'app'
-         FORCE: 'True'
-         CHARTMUSEUM_URL: 'http://localhost:8080'
-         CHARTMUSEUM_USER: 'user'
-         CHARTMUSEUM_PASSWORD: 'password'
+       run: |
+        CHART_FILE=$(find app -name 'app-*.tgz' | head -n 1)
+        sudo helm package appChart/
+        sudo curl --data-binary "@${CHART_FILE}" "http://localhost:8080/api/charts?force=true"
+      # sudo helm package appChart/
+      # sudo curl --data-binary "@app-0.1.0.tgz" http://localhost:8080/api/charts?force=true
+      #  uses: unwrittenmedia/helm3-push-action@v1.0.2
+      #  env:
+      #    SOURCE_DIR: '.'
+      #    CHART_FOLDER: 'app'
+      #    FORCE: 'True'
+      #    CHARTMUSEUM_URL: 'http://localhost:8080'
+      #    CHARTMUSEUM_USER: 'user'
+      #    CHARTMUSEUM_PASSWORD: 'password'
 
