@@ -19,8 +19,6 @@ jobs:
         sudo helm package app/
         CHART_FILE=$(find . -name 'app-*.tgz' | head -n 1)
         sudo curl --data-binary "@${CHART_FILE}" "http://localhost:8080/api/charts?force=true"
-      # sudo helm package app/
-      # sudo curl --data-binary "@app-0.1.0.tgz" http://localhost:8080/api/charts?force=true
       #  uses: unwrittenmedia/helm3-push-action@v1.0.2
       #  env:
       #    SOURCE_DIR: '.'
