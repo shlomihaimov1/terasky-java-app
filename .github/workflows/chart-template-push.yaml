@@ -16,7 +16,7 @@ jobs:
 
      - name: Save Helm Chart to ChartMuseum
        run: |
-        CHART_FILE=$(find app -name 'app-*.tgz' | head -n 1)
+        CHART_FILE=$(find . -name 'app-*.tgz' | head -n 1)
         sudo helm package app/
         sudo curl --data-binary "@${CHART_FILE}" "http://localhost:8080/api/charts?force=true"
       # sudo helm package app/
