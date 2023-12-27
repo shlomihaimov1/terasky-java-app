@@ -24,4 +24,6 @@ jobs:
          CHART_FOLDER: 'appChart'
          FORCE: 'True'
          CHARTMUSEUM_URL: 'http://localhost:8080'
+         CHARTMUSEUM_USER: 'user'
+         CHARTMUSEUM_PASSWORD: 'password'
 
