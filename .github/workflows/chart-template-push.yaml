@@ -21,7 +21,7 @@ jobs:
        uses: unwrittenmedia/helm3-push-action@v1.0.2
        env:
          SOURCE_DIR: '.'
-         CHART_FOLDER: 'appChart'
+         CHART_FOLDER: 'app'
          FORCE: 'True'
          CHARTMUSEUM_URL: 'http://localhost:8080'
          CHARTMUSEUM_USER: 'user'
