@@ -3,7 +3,7 @@
 # Declare variables to be passed into your templates.
 
 namespace: terasky-app
-replicaCount: 2
+replicaCount: 3
 
 image:
   repository: shlomihaimov1/terasky-app:b8.20231227.191935
