@@ -3,12 +3,12 @@
 # Declare variables to be passed into your templates.
 
 namespace: terasky-app
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: shlomihaimov1/terasky-app:b8.20231227.191935
   pullPolicy: Always
-  
+
 
 imagePullSecrets: []
 nameOverride: ""
