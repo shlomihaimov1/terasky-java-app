@@ -19,12 +19,3 @@ jobs:
         sudo helm package app/
         CHART_FILE=$(find . -name 'app-*.tgz' | head -n 1)
         sudo curl --data-binary "@${CHART_FILE}" "http://localhost:8080/api/charts?force=true"
-      #  uses: unwrittenmedia/helm3-push-action@v1.0.2
-      #  env:
-      #    SOURCE_DIR: '.'
-      #    CHART_FOLDER: 'app'
-      #    FORCE: 'True'
-      #    CHARTMUSEUM_URL: 'http://localhost:8080'
-      #    CHARTMUSEUM_USER: 'user'
-      #    CHARTMUSEUM_PASSWORD: 'password'
-
